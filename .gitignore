@@ -5,6 +5,7 @@ node_modules/saml2-js/*
 !node_modules/saml2-js/lib-js/
 
 config
+model
 token
 certs
 log
