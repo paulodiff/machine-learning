@@ -11,7 +11,6 @@ certs
 log
 tmp
 storage
-docs
 .idea
 .temp
 .sass-cache
