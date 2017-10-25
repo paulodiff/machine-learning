@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://web.stanford.edu/class/cs20si/syllabus.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stanford University: Tensorflow for Deep Learning Research</title>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="./Stanford University_ Tensorflow for Deep Learning Research_files/bootstrap.min.css">
+  <link rel="stylesheet" href="./Stanford University_ Tensorflow for Deep Learning Research_files/bootstrap-theme.min.css">
+
+  <!-- Google fonts -->
+  <link href="./Stanford University_ Tensorflow for Deep Learning Research_files/css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" type="text/css" href="./Stanford University_ Tensorflow for Deep Learning Research_files/style.css">
+
+</head>
+
+<body>
+
+<div id="header">
+  <a href="http://nlp.stanford.edu/">
+    <img src="./Stanford University_ Tensorflow for Deep Learning Research_files/nlp-logo.gif" style="height:50px; float: left; margin-left: 20px;">
+  </a>
+  <a href="http://web.stanford.edu/class/cs20si/index.html">
+    <h1>CS 20SI: Tensorflow for Deep Learning Research</h1>
+  </a>
+  <div style="clear:both;"></div>
+</div>
+
+
+
+<div class="sechighlight">
+<div class="container sec">
+  <h2>Schedule and Syllabus</h2>
+
+  Unless otherwise specified the course lectures and meeting times are:<br><br>
+  Wednesday, Friday 3:30-4:20<br>
+  Location: 200-219
+  <br><br>
+  This syllabus is subject to change according to the pace of the class.
+</div>
+</div>
+
+<div class="container sec">
+<table class="table">
+  <tbody><tr class="active">
+    <th>Event</th><th>Date</th><th>Description</th><th>Course Materials</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Jan 11 <br>Week 1</td>
+    <td>No class</td>
+    <td>
+      <a href="https://github.com/chiphuyen/tf-stanford-tutorials/tree/master/setup">Set up Tensorflow</a><br>
+      Suggested Readings: <br>
+      Nothing in particular, but you're welcome to read anything you want.
+  </td></tr>
+  <tr>
+    <td>Lecture</td>
+    <td>Jan 13</td>
+    <td><b>Overview of Tensorflow</b><br>
+    Why Tensorflow? <br>
+    Graphs and Sessions 
+    </td>
+    <td>
+      [<a href="http://web.stanford.edu/class/cs20si/lectures/notes_01.pdf">note</a>]<br>[<a href="http://web.stanford.edu/class/cs20si/lectures/slides_01.pdf">slides</a>]<br>
+    </td>
+  </tr>
+
+  <tr class="danger">
+    <td>To do</td>
+    <td>Jan 13</td>
+    <td><b>Check out TensorBoard</b></td>
+    <td></td>
+  </tr><tr>
+
+  </tr><tr>
+    <td>Lecture</td>
+    <td>Jan 18 <br>Week 2</td>
+    <td><b>Operations</b><br>
+    Basic operations, constants, variables <br>
+    Control dependencies <br>
+    Feeding inputs <br>
+    TensorBoard <br>
+    </td>
+    <td>
+     [<a href="http://web.stanford.edu/class/cs20si/lectures/notes_02.pdf">note</a>]<br>[<a href="http://web.stanford.edu/class/cs20si/lectures/slides_02.pdf">slides</a>]<br>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>Workshop</td>
+    <td>Jan 20</td>
+    <td><b>Linear and Logistic Regression</b><br>
+    Tensorflow's Optimizers <br>
+    Example: OCR task on MNIST dataset
+    </td>
+    <td>
+      [<a href="http://web.stanford.edu/class/cs20si/lectures/notes_03.pdf">note</a>]<br>[<a href="http://web.stanford.edu/class/cs20si/lectures/slides_03.pdf">slides</a>]<br>
+    </td>
+  </tr>
+   <tr class="warning">
+    <td>A1 released</td>
+    <td>Jan 20</td>
+    <td><b>Assignment #1 released</b></td>
+    <td>[<a href="http://web.stanford.edu/class/cs20si/assignments/a1.pdf">A1 handout</a>]<br>[<a href="https://github.com/chiphuyen/tf-stanford-tutorials/tree/master/assignments">code</a>]</td>
+  </tr><tr>
+    <td>Lecture</td>
+    <td>Jan 25 <br>Week 3</td>
+    <td><b>Structure your TensorFlow model</b><br>
+    Example: word2vec
+    </td>
+    <td>
+     Suggested Readings: <br>
+  A lot. See lecture note <br>
+[<a href="http://web.stanford.edu/class/cs20si/lectures/notes_04.pdf">note</a>]<br>[<a href="http://web.stanford.edu/class/cs20si/lectures/slides_04.pdf">slides</a>]<br>
+    
+    </td>
+  </tr>
+  <tr>
+    <td>Lecture</td>
+    <td>Jan 27</td>
+    <td><b>Managing experiments and process data</b><br>
+Interfaces <br>
+    Saver object, checkpoints <br>    
+Example: word2vec</td>
+    <td>
+    [<a href="http://web.stanford.edu/class/cs20si/lectures/notes_05.pdf">note</a>]<br>[<a href="http://web.stanford.edu/class/cs20si/lectures/slides_05.pdf">slides</a>]</td>
+  </tr>
+  <tr class="warning">
+    <td>A1 Due</td>
+    <td>Jan 31</td>
+    <td><b>Assignment #1 due</b></td>
+    <td> <!-- <a href="assignment1/index.html">Pset 1</a>--> </td> 
+  </tr>
+  <tr>
+    <td>Lecture</td>
+    <td>Feb 1 <br> Week 4</td>
+    <td><b>Convolutional Neural Networks</b><br>
+    Guest lecture by <a href="http://cs.stanford.edu/people/jcjohns/"> Justin Johnson</a> (Stanford Vision Lab) <br>
+    Example: Neural style translation
+    </td>
+    <td>
+      [<a href="http://web.stanford.edu/class/cs20si/lectures/slides_06.pdf">slides</a>]
+    </td>
+  </tr>
+   <tr>
+    <td>Lecture</td>
+    <td>Feb 3</td>
+    <td><b>Convolutional Neural Networks</b> (continued)<br>
+    Example: Autoencoder
+    </td>
+    <td>
+      [<a href="http://web.stanford.edu/class/cs20si/lectures/notes_07_draft.pdf">note</a>]<br>[<a href="http://web.stanford.edu/class/cs20si/lectures/slides_07.pdf">slides</a>]<br>
+     </td>
+  </tr>
+<tr class="warning">
+    <td>A2 released</td>
+    <td>Feb 8</td>
+    <td><b>Assignment #2 released</b></td>
+    <td><a href="http://web.stanford.edu/class/cs20si/assignments/a2.pdf">[A2 Handout]<br></a><a href="https://github.com/chiphuyen/tf-stanford-tutorials/tree/master/assignments/style_transfer">[code]</a> </td>
+  </tr>
+  <tr>
+    <td>Lecture</td>
+    <td>Feb 8 <br> Week 5</td>
+    <td><b>Convolutional Neural Networks</b><br>
+Guest lecture by <a href="https://research.google.com/pubs/JonathonShlens.html">Jon Shlens</a> (Google Brain)
+   </td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td>Lecture</td>
+    <td>Feb 10</td>
+    <td><b>Input Pipeline</b><br>
+    Discussion of Assignment #2 <br>
+    Style Transfer <br>
+    </td>
+    <td>
+    [<a href="http://web.stanford.edu/class/cs20si/lectures/notes_09.pdf">note</a>]<br>[<a href="http://web.stanford.edu/class/cs20si/lectures/slides_09.pdf">slides</a>]<br>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Feb 15 <br>Week 6</td>
+    <td>No class</td>
+    <td>
+      TensorFlow Dev Summit <br>
+      <a href="https://docs.google.com/a/google.com/forms/d/e/1FAIpQLSfFrQG5SMAw8X22KN_3gFIvtYfJqsM0MMsC5Lj_JcF1UNBElA/viewform">Sign up for campus viewing</a><br>
+  </td></tr>
+  <tr>
+    <td>Lecture</td>
+    <td>Feb 17</td>
+    <td><b>Midterm discussion</b></td>
+    <td>
+      <!-- <p>Suggested Readings: N/A</p>
+      [<a href="slides/slide_9.pdf">Slides</a>] -->
+No slides
+    </td>
+</tr><tr class="warning">
+    <td>A2 Due</td>
+    <td><b>Feb 20</b></td>
+    <td><b>Assignment #2 due</b></td>
+    <td></td>
+  </tr>
+  
+    <tr><td>Lecture</td>
+    <td>Feb 22 <br> Week 7</td>
+    <td><b>Introduction to RNN, LSTM, GRU</b><br>
+    Example: Character-level Language Modeling</td>
+    
+    <td>
+      <!-- Suggested Readings:
+      <ol>
+        <li>[<a href="http://nal.co/papers/Kalchbrenner_DCNN_ACL14">A Convolutional Neural Network for Modelling Sentences</a>]</li>
+      </ol>
+      [<a href="slides/slide_10.pdf">Slides</a>] -->
+[<a href="http://web.stanford.edu/class/cs20si/lectures/slides_11.pdf">slides</a>]
+    </td>
+  </tr><tr>
+  </tr><tr>
+    <td>Lecture</td>
+    <td>Feb 24</td>
+    <td><b>Convolutional-GRU</b><br>
+Guest lecture by <a href="https://research.google.com/pubs/LukaszKaiser.html">Lukasz Kaiser</a> (Google Brain)
+   </td>
+    <td>
+[<a href="http://web.stanford.edu/class/cs20si/lectures/slides_12.pdf">slides</a>]<br>
+      <!-- Suggested Readings:
+      <ol>
+        <li>[<a href="papers/maas_paper.pdf"> Deep Neural Networks for Acoustic Modeling in Speech Recognition</a>]</li>
+      </ol>
+        [<a href="slides/slide_11.pdf">Slides</a>] -->
+  </td>
+  </tr>
+  <tr>
+    <td>Lecture</td>
+    <td>Mar 1 <br>Week 8</td>
+    <td><b>Seq2seq with Attention</b>
+    <br> Example: Chatbot
+    </td><td>
+    [<a href="http://web.stanford.edu/class/cs20si/lectures/slides_13.pdf">slides</a>]
+     <!--  Suggested Readings:
+      <ol>
+      </ol>
+      [<a href="slides/slide_12.pdf">Slides</a>] -->
+    </td>
+  </tr>
+<tr class="warning">
+    <td>A3 released</td>
+    <td>Mar 2</td>
+    <td><b>Assignment #3 released</b></td>
+    <td><a href="http://web.stanford.edu/class/cs20si/assignments/a3.pdf">[A3 Handout]<br></a><a href="https://github.com/chiphuyen/tf-stanford-tutorials/tree/master/assignments/chatbot">[code]</a><br><a href="http://web.stanford.edu/class/cs20si/anonymous_chatlog.pdf">[Anonymous Chatlog Donation]<br></a></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Mar 3</td>
+<td>No class<br></td><td><a href="https://www.eventbrite.com/e/primer-hosts-pete-warden-tensorflow-for-mobile-developers-tickets-32415900832">Pete Warden: TensorFlow for Mobile Developers</a></td>
+    <td>
+      <!-- Suggested Readings:
+      <ol>
+      </ol>
+     [<a href="slides/slide_13.pdf">Slides</a>] -->
+    </td>
+  </tr>
+  <tr>
+    <td>Lecture</td>
+    <td>Mar 8 <br>Week 9</td>
+    <td><b>Seq2seq with Attention (continued)</b><br>Chatbot: Training and Optimizing <!-- <br> [Focusing on distribution] --></td>
+    <td>
+      <!-- Suggested Readings:
+      <ol>
+        <li>[<a href="http://arxiv.org/abs/1506.07285">Ask me anthing: Dynamic Memory Networks for NLP</a>]</li>
+      </ol>
+      [<a href="lectures/CS224d-Lecture17.pdf">slides</a>] -->
+    </td>
+  </tr>
+  <tr>
+    <td>Lecture</td>
+    <td>Mar 10 </td>
+    <td><b>Reinforcement Learning in Tensorflow</b>
+    <br> Guest lecture by <a href="http://danijar.com/">Danijar Hafner</a> <br>(co-author of TensorFlow for Machine Intelligence)
+    </td>
+    <td>
+[<a href="http://web.stanford.edu/class/cs20si/lectures/slides_14.pdf">slides</a>]
+      <!-- Suggested Readings:
+      <ol>
+        <li>[<a href="http://arxiv.org/abs/1506.07285">Ask me anthing: Dynamic Memory Networks for NLP</a>]</li>
+      </ol>
+      [<a href="slides/slide_14.pdf">Slides</a>] -->
+    </td>
+  </tr>
+   
+   <tr class="warning">
+    <td>A3 Due</td>
+    <td>Mar 17</td>
+    <td><b>Assignment #3 due</b></td>
+    <td></td>
+  </tr>
+<tr>
+    <td>Demo</td>
+    <td>Mar 17 </td>
+    <td><b>Chatbot demo</b>
+    </td>
+    <td>
+    </td>
+  </tr>
+</tbody></table>
+</div>
+
+
+<!-- jQuery and Boostrap -->
+<script src="./Stanford University_ Tensorflow for Deep Learning Research_files/jquery.min.js.download"></script>
+<script src="./Stanford University_ Tensorflow for Deep Learning Research_files/bootstrap.min.js.download"></script>
+
+
+
+</body></html>

@@ -7,18 +7,18 @@
 
  my_features = ['bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'zipcode']
  advanced_features = [
-'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'zipcode',
-'condition', # condition of house				
-'grade', # measure of quality of construction				
-'waterfront', # waterfront property				
-'view', # type of view				
-'sqft_above', # square feet above ground				
-'sqft_basement', # square feet in basement				
-'yr_built', # the year built				
-'yr_renovated', # the year renovated				
-'lat', 'long', # the lat-long of the parcel				
-'sqft_living15', # average sq.ft. of 15 nearest neighbors 				
-'sqft_lot15', # average lot size of 15 nearest neighbors 
+    'bedrooms', 'bathrooms', 'sqft_living', 'sqft_lot', 'floors', 'zipcode',
+    'condition', # condition of house				
+    'grade', # measure of quality of construction				
+    'waterfront', # waterfront property				
+    'view', # type of view				
+    'sqft_above', # square feet above ground				
+    'sqft_basement', # square feet in basement				
+    'yr_built', # the year built				
+    'yr_renovated', # the year renovated				
+    'lat', 'long', # the lat-long of the parcel				
+    'sqft_living15', # average sq.ft. of 15 nearest neighbors 				
+    'sqft_lot15', # average lot size of 15 nearest neighbors 
 ]
 
 '''
@@ -43,6 +43,7 @@ PREDICTION_SET = DATA_DIR + "home-prediction.csv"
 
 # for TensorBoard
 MODEL_DIR = "./model/home"
+MODEL_TRAINIG_STEP = 1000
 
 print('## Start operazioni')
 
@@ -102,14 +103,28 @@ def build_dataset():
 
     return
 
+def show_sample_data():
+    MAX_ROW = 100
+    
+    print('Show sample data ... first n row', MAX_ROW, TRAINING_SET)
+    training_set = pd.read_csv(TRAINING_SET, nrows=MAX_ROW)
+    print(training_set[['sqft_living','price']])
+
+    print('Show sample data ... first n row', MAX_ROW, TEST_SET)
+    test_set = pd.read_csv(TEST_SET, nrows=MAX_ROW)
+    print(test_set[['sqft_living','price']])
+   
+    return
+
 def main(unused_argv):
 
     # Cotruisce i file per il modello
-    build_dataset()
-
-    print('Loading datasets')
+    # build_dataset()
+    # show_sample_data()
+    # exit(0)
 
     # Load datasets
+    print('Loading datasets')
     training_set = pd.read_csv(TRAINING_SET, skipinitialspace=True, skiprows=1, names=COLUMNS)
     test_set = pd.read_csv(TEST_SET, skipinitialspace=True, skiprows=1, names=COLUMNS)
 
@@ -119,27 +134,42 @@ def main(unused_argv):
     # Feature cols
     feature_cols = [tf.feature_column.numeric_column(k) for k in FEATURES]
 
-    print('Regressor...')
+    # summaryWriter
+    tf.summary.scalar("label", tensor=tf.constant(1))
+    tf.summary.text(name='loss123',tensor=tf.constant('MARiO'))
+    merged = tf.summary.merge_all() 
 
-    # Build 2 layer fully connected DNN with 10, 10 units respectively.
+    # https://www.tensorflow.org/api_guides/python/train#Training_Hooks
+    # https://www.tensorflow.org/api_docs/python/tf/train/SummarySaverHook
+    hooks = [
+                tf.train.LoggingTensorHook({'loss'}, every_n_iter = 10), 
+                tf.train.StepCounterHook(every_n_steps=100),
+                tf.train.SummarySaverHook(save_steps=100,summary_op=merged)
+            ]
+
+    # Build regessor
+    print('Regressor...')
     regressor = tf.estimator.LinearRegressor(feature_columns=feature_cols,
                                         # hidden_units=[30, 20, 10],
                                         # label_dimension=2, # modifica per output multi-dimensionale
                                         model_dir=MODEL_DIR)
 
 
-    print('Training...')
     # Train
-    regressor.train(input_fn=get_input_fn(training_set), steps=5000)
+    # print('Training...')
+    regressor.train(
+            input_fn=get_input_fn(training_set), 
+            # hooks List of SessionRunHook subclass instances. Used for callbacks inside the training loop.
+            hooks=hooks,
+            steps=MODEL_TRAINIG_STEP)
 
 
-    print('Evaluate...')
     # Evaluate loss over one epoch of test_set.
+    print('Evaluate...')
     ev = regressor.evaluate(input_fn=get_input_fn(test_set, num_epochs=1, shuffle=False))
     loss_score = ev["loss"]
     
     print("Loss: {0:f}".format(loss_score))
-
     print(ev)
 
     print('### Fine Operazioni ###')
