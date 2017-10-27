@@ -6,7 +6,7 @@ import tensorflow as tf
 def init_weights(shape, name):
     return tf.Variable(tf.random_normal(shape, stddev=0.01), name=name)
 
-
+MODEL_FOLDER = './model/gradient-demo-tb'
 
 # enable plot update
 # plt.ion()
@@ -83,7 +83,7 @@ with tf.Session() as sess:
 # in the end of the process, the values of the variables minimize the cost function.
 
    # Step 10 create a log writer. run 'tensorboard --logdir=./logs/nn_logs'
-   summary_writer = tf.summary.FileWriter("./logs/GRADIENT_logs", sess.graph)  # for 0.8
+   summary_writer = tf.summary.FileWriter(MODEL_FOLDER, sess.graph)  # for 0.8
    # merged = tf.summary.merge_all()
    sess.run(init)
 
